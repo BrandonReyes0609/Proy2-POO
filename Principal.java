@@ -15,11 +15,11 @@ public class Principal {
                     System.out.println("Ingrese el nombre del paciente");
                     teclado.next();
                     String  nombre = teclado.nextLine();
-                    System.out.println("Ingrese el appelido ");
+                    System.out.println("Ingrese el apellido ");
                     String apellidos = teclado.nextLine(); ;
-                    System.out.println("Ingrese el edad");
+                    System.out.println("Ingrese la edad");
                     int edad = teclado.nextInt();
-                    System.out.println("Ingrese el talla ");
+                    System.out.println("Ingrese la talla ");
                     int talla = teclado.nextInt();
                     System.out.println("Ingrese el peso en Kg");
                     int peso = teclado.nextInt();
@@ -32,7 +32,7 @@ public class Principal {
                     teclado.nextLine();
                     String sexo = teclado.nextLine();
                     //System.out.println("Ingrese el ");
-                    System.out.println("Ingrese la estatura Metros");
+                    System.out.println("Ingrese la estatura en Metros");
                     float estatura = teclado.nextFloat();
                     System.out.println("Ingrese el ");
                     float datoIMC = peso / (estatura*estatura);
