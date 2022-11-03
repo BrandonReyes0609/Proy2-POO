@@ -21,7 +21,7 @@ public class ManejoDatos{
      * @param datoIMC
      * @param estatura;
      */
-    public void agregarPaceintes(String nombre,String apellidos,int edad,int talla,int peso,String realizaEjercicio,int numComida,String sexo,float datoIMC,float estatura){
+    public void agregarPacientes(String nombre,String apellidos,int edad,int talla,int peso,String realizaEjercicio,int numComida,String sexo,float datoIMC,float estatura){
         FichaMedica nuevFichaMedica = new FichaMedica(nombre, apellidos, edad, talla, peso, realizaEjercicio, numComida, sexo, datoIMC, estatura);
         this.pacientes.add(nuevFichaMedica);
     }
@@ -55,7 +55,7 @@ public class ManejoDatos{
     }
 
 
-    public String pascientesFichaMedica(){
+    public String pacientesFichaMedica(){
         int i = 0; 
         String resultados = "";
         while (i<pacientes.size()){
