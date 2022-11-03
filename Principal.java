@@ -6,7 +6,7 @@ public class Principal {
         ManejoDatos listadoPacientes = new ManejoDatos();
         Scanner teclado = new Scanner(System.in);
         System.out.println("Bienvenido al programa");
-        String menu = "\nSeleccione alguna de las siguientes opciones: \n(1) Ingreso nuevo paciente \n(2) Ver datos paciente \n(3) Recomendaciones paciente \n(4) Estadistica \n(5) Salir";
+        String menu = "Seleccione alguna de las siguientes opciones: \n(1) Ingreso nuevo paciente \n(2) Ver datos paciente \n(3) Recomendaciones paciente \n(4) Estadistica \n (5) Guardar y Salir \n (6) Leer Archivo";
         System.out.println(menu);
         int op = teclado.nextInt(); 
         while(op != 5){
@@ -62,12 +62,24 @@ public class Principal {
                     System.out.println("Selecciono Opcion 4\n----Ver estadisticas----");
                     System.out.println(listadoPacientes.estadistica());
                     break;
-                }
-                case 5:{
+                }case 5:{
                     op = 5;
+                    System.out.println("Guardar y cerrar archivo");
+                    listadoPacientes.getPacientes();
+
+                    ArrayList<String> lineas = miArchivo.leerArchivo();
+                    for (String linea : lineas) {
+                        System.out.println(linea);
+                    }
+                    miArchivo.leerArchivoString();
+                    
                     break;
+                }case 6:{
+                    System.out.println("Leer datos pasiente");
+                    listadoPacientes.getPacientes();
                 }
-                
+
+                    
             }
             System.out.println(menu);
             op = teclado.nextInt();
