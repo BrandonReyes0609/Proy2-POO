@@ -19,8 +19,6 @@ public class Principal {
                     String apellidos = teclado.nextLine(); ;
                     System.out.println("Ingrese la edad");
                     int edad = teclado.nextInt();
-                    System.out.println("Ingrese la talla ");
-                    int talla = teclado.nextInt();
                     System.out.println("Ingrese el peso en Kg");
                     int peso = teclado.nextInt();
                     teclado.nextLine();
