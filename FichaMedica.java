@@ -48,14 +48,6 @@ public class FichaMedica{
         this.edad = edad;
     }
 
-    public int getTalla() {
-        return this.talla;
-    }
-
-    public void setTalla(int talla) {
-        this.talla = talla;
-    }
-
     public int getPeso() {
         return this.peso;
     }
@@ -104,32 +96,15 @@ public class FichaMedica{
         this.estatura = estatura;
     }
 
-
-
-
     @Override
-    /*
-    public String toString() {
-        return "{" +
-            " nombre='" + getNombre() + "'" +
-            ", apellidos='" + getApellidos() + "'" +
-            ", edad='" + getEdad() + "'" +
-            ", peso='" + getPeso() + "'" +
-            ", realizaEjercicio='" + getRealizaEjercicio() + "'" +
-            ", numComida='" + getNumComida() + "'" +
-            ", sexo='" + getSexo() + "'" +
-            ", datoIMC='" + getDatoIMC() + "'" +
-            ", estatura='" + getEstatura() + "'" +
-            "}";
-    } */
 
     public String toString(){
         String cadena = "";
-        cadena = "Nombre "+ nombre +" "+ apellidos + " tiene las siguientes características: \n";
-        cadena = cadena + "edad: "+edad+"
-                "\npeso: "+peso+"\nrealizaEjercicio: "+realizaEjercicio+
-                "\nsexo: "+sexo+"\nnumComida: "+numComida+
-                "\ndatoIMC: "+datoIMC+"\nestatura: "+estatura;
+        cadena = "Nombre: " + nombre + "\nApellido: " + apellidos;
+        cadena = cadena + "\nEdad: " + edad +
+                "\nPeso: " + peso + "\nRealizaEjercicio: " + realizaEjercicio + 
+                "\nSexo: " + sexo + "\nNumComidas: " + numComida + 
+                "\nDatoIMC: " + datoIMC + "\nEstatura: " + estatura;
         return cadena;
     }
 
