@@ -6,60 +6,72 @@ public class Principal {
         ManejoDatos listadoPacientes = new ManejoDatos();
         Scanner teclado = new Scanner(System.in);
         System.out.println("Bienvenido al programa");
-        System.out.println("Seleccione alguna de las siguientes opciones: \n(1) Ingreso nuevo paciente \n(2) Ver datos paciente \n(3) Recomendaciones paciente \n(4) Estadistica \n (5) Salir");
+        String menu = "\nSeleccione alguna de las siguientes opciones: \n(1) Ingreso nuevo paciente \n(2) Ver datos paciente \n(3) Recomendaciones paciente \n(4) Estadistica \n(5) Salir";
+        System.out.println(menu);
         int op = teclado.nextInt(); 
         while(op != 5){
             switch(op){
                 case 1:{
-                    System.out.println("Selecciono Opcion 1 \nIngrso nuevo paciente");
-                    System.out.println("Ingrese el nombre del paciente");
+                    try{
+                    System.out.println("Selecciono Opcion 1 \n----Ingreso de nuevo paciente----");
+                    System.out.println("Ingrese el nombre del paciente: ");
                     teclado.next();
-                    String  nombre = teclado.nextLine();
-                    System.out.println("Ingrese el apellido ");
+                    String nombre = teclado.nextLine();
+                    System.out.println("Ingrese el apellido: ");
                     String apellidos = teclado.nextLine(); ;
-                    System.out.println("Ingrese la edad");
+                    System.out.println("Ingrese el edad: ");
                     int edad = teclado.nextInt();
-                    System.out.println("Ingrese el peso en Kg");
+                    teclado.nextLine();
+                    System.out.println("Ingrese el peso en Kg: ");
                     int peso = teclado.nextInt();
                     teclado.nextLine();
-                    System.out.println("Ingrese el realiza ejercicio (si/no)");
+                    System.out.println("Ingrese si realiza ejercicio (si/no): ");
                     String realizaEjercicio = teclado.nextLine();
-                    System.out.println("Ingrese el numero de comidas al dia");
+                    System.out.println("Ingrese el numero de comidas al dia: ");
                     int numComida = teclado.nextInt();
-                    System.out.println("Ingrese el el sexo o genero (hombre/mujer/otro)");
+                    System.out.println("Ingrese el sexo o genero (hombre/mujer/otro): ");
                     teclado.nextLine();
                     String sexo = teclado.nextLine();
-                    //System.out.println("Ingrese el ");
-                    System.out.println("Ingrese la estatura en Metros");
+                    System.out.println("Ingrese la estatura en Metros: ");
                     float estatura = teclado.nextFloat();
-                    System.out.println("Ingrese el ");
+                    teclado.nextLine();
                     float datoIMC = peso / (estatura*estatura);
                     
-                    listadoPacientes.agregarPaceintes(nombre, apellidos, edad, talla, peso, realizaEjercicio, numComida, sexo, datoIMC, estatura);
-            
+                    listadoPacientes.agregarPacientes(nombre, apellidos, edad, peso, realizaEjercicio, numComida, sexo, datoIMC, estatura);
+                    }
+                    catch (Exception e){
+                        teclado.next();
+                        System.out.println("Entrada incorrecta");
+                        System.out.println(menu);
+                        System.out.println("Ingrese la opción que desea: ");
+                        op = teclado.nextInt();
+                        teclado.nextLine();
+                        }
                     break;
-                }case 2:{
-                    System.out.println("Selecciono Opcion 2 \n Ver datos paciente");
-                    System.out.println(listadoPacientes.pascientesFichaMedica());
-
+                }
+                case 2:{
+                    System.out.println("Selecciono Opcion 2\n----Ver datos paciente----");
+                    System.out.println(listadoPacientes.pacientesFichaMedica());
                     break;
-                }case 3:{
-                    System.out.println("Selecciono Opcion 3 \n Recomendaciones paciente");
-
+                }
+                case 3:{
+                    System.out.println("Selecciono Opcion 3\n----Recomendaciones paciente----");
                     break;
-                }case 4:{
-                    System.out.println("Selecciono Opcion 4 \n Ver estadistica");
+                }
+                case 4:{
+                    System.out.println("Selecciono Opcion 4\n----Ver estadisticas----");
                     System.out.println(listadoPacientes.estadistica());
                     break;
-                }case 5:{
+                }
+                case 5:{
                     op = 5;
                     break;
                 }
                 
             }
-            System.out.println("Seleccione alguna de las siguientes opciones: \n(1) Ingreso nuevo paciente \n(2) Ver datos paciente \n(3) Recomendaciones paciente \n(4) Estadistica \n (5) Salir");
+            System.out.println(menu);
             op = teclado.nextInt();
-            
+            teclado.nextLine();
         }
     }
 }
