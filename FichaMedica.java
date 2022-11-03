@@ -2,7 +2,6 @@ public class FichaMedica{
     private String nombre;
     private String apellidos;
     private int edad;
-    private int talla;
     private int peso;
     private String realizaEjercicio;
     private int numComida;
@@ -13,11 +12,10 @@ public class FichaMedica{
     public FichaMedica() {
     }
 
-    public FichaMedica(String nombre, String apellidos,int edad, int talla, int peso, String realizaEjercicio, int numComida, String sexo, float datoIMC, float estatura) {
+    public FichaMedica(String nombre, String apellidos,int edad, int peso, String realizaEjercicio, int numComida, String sexo, float datoIMC, float estatura) {
         this.nombre = nombre;
         this.apellidos = apellidos;
         this.edad = edad;
-        this.talla = talla;
         this.peso = peso;
         this.realizaEjercicio = realizaEjercicio;
         this.numComida = numComida;
@@ -116,7 +114,6 @@ public class FichaMedica{
             " nombre='" + getNombre() + "'" +
             ", apellidos='" + getApellidos() + "'" +
             ", edad='" + getEdad() + "'" +
-            ", talla='" + getTalla() + "'" +
             ", peso='" + getPeso() + "'" +
             ", realizaEjercicio='" + getRealizaEjercicio() + "'" +
             ", numComida='" + getNumComida() + "'" +
@@ -129,7 +126,7 @@ public class FichaMedica{
     public String toString(){
         String cadena = "";
         cadena = "Nombre "+ nombre +" "+ apellidos + " tiene las siguientes características: \n";
-        cadena = cadena + "edad: "+edad+"\ntalla: "+talla+
+        cadena = cadena + "edad: "+edad+"
                 "\npeso: "+peso+"\nrealizaEjercicio: "+realizaEjercicio+
                 "\nsexo: "+sexo+"\nnumComida: "+numComida+
                 "\ndatoIMC: "+datoIMC+"\nestatura: "+estatura;
