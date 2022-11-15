@@ -101,7 +101,7 @@ public class Recomendaciones {
         }
 
 
-        //Cantidad e calorias necesaria
+        //Cantidad y calorias necesarias
         //https://aprendeconreyhan.org/como-realizar-mi-calculo-calorico/
         double _KcalDia = 0;
         String  _Res_KcalDia = "";
@@ -230,7 +230,7 @@ public class Recomendaciones {
     }
 
             /*
-         * Docuemntación de apoyo
+         * Documentación de apoyo
          * https://www.cdc.gov/healthyweight/spanish/assessing/bmi/adult_bmi/metric_bmi_calculator/bmi_calculator.html
          */
 
