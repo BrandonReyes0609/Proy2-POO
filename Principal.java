@@ -8,7 +8,7 @@ public class Principal {
         Scanner teclado = new Scanner(System.in);
         Archivo miArchivo = new Archivo();
         System.out.println("Bienvenido al programa");
-        String menu = "\nSeleccione alguna de las siguientes opciones: \n(1) Ingreso nuevo paciente \n(2) Ver datos paciente \n(3) Recomendaciones paciente \n(4) Estadistica \n(5) Guardar y Salir \n(6) Leer Archivo";
+        String menu = "\n--------------------------------------------------------\n| Seleccione alguna de las siguientes opciones:        |\n| (1) Ingreso nuevo paciente                           |\n| (2) Ver datos paciente                               |\n| (3) Recomendaciones paciente                         |\n| (4) Estadistica                                      |\n| (5) Guardar y Salir                                  |\n| (6) Leer Archivo                                     |\n--------------------------------------------------------\nOpcion a elegir: ";
         System.out.println(menu);
         int op = teclado.nextInt();
         teclado.nextLine(); 
