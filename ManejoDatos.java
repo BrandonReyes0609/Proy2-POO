@@ -105,10 +105,6 @@ public class ManejoDatos{
                     sumaimcm = sumaimcm + ficha.getDatoIMC();
                     im++;
                 }
-                if(ficha.getSexo().equals("otro") || ficha.getSexo().equals("Otro")){
-                    sumaimco = sumaimco + ficha.getDatoIMC();
-                    io++;
-                    }
             }
             float promedioimch = sumaimc/ih;
             float promedioimcm = sumaimc/im;
