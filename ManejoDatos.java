@@ -56,15 +56,17 @@ public class ManejoDatos{
         int i = 1; 
         String resultados = "";
         if(pacientes.size()>0){
-            while (i<pacientes.size()){
+            while (i<=pacientes.size()){
                 resultados = resultados + "\n------ Paciente " + i + " ------\n";
-                resultados = resultados + "Edad: "+ pacientes.get(i).getEdad()+"\n";
-                resultados = resultados + "Peso: "+ pacientes.get(i).getPeso()+"\n";
-                resultados = resultados + "Realiza Ejercicio: "+ pacientes.get(i).getRealizaEjercicio()+"\n";
-                resultados = resultados + "Sexo o Genero: "+ pacientes.get(i).getSexo() +"\n";
-                resultados = resultados + "Numero de Comida: "+ pacientes.get(i).getNumComida()+"\n";
-                resultados = resultados + "Dato IMC: "+ pacientes.get(i).getDatoIMC()+"\n";
-                resultados = resultados + "Estatura: "+ pacientes.get(i).getEstatura()+"\n";
+                resultados = resultados + "Nombre: "+ pacientes.get(i-1).getNombre()+"\n";
+                resultados = resultados + "Apeliido: "+ pacientes.get(i-1).getApellidos()+"\n";
+                resultados = resultados + "Edad: "+ pacientes.get(i-1).getEdad()+" anios"+"\n";
+                resultados = resultados + "Peso: "+ pacientes.get(i-1).getPeso()+" Kg"+"\n";
+                resultados = resultados + "Realiza Ejercicio: "+ pacientes.get(i-1).getRealizaEjercicio()+"\n";
+                resultados = resultados + "Sexo o Genero: "+ pacientes.get(i-1).getSexo()+"\n";
+                resultados = resultados + "Numero de Comida: "+ pacientes.get(i-1).getNumComida()+"\n";
+                resultados = resultados + "Dato IMC: "+ pacientes.get(i-1).getDatoIMC()+"\n";
+                resultados = resultados + "Estatura: "+ pacientes.get(i-1).getEstatura()+" metros"+"\n";
 
                 resultados = resultados + "-----------------------------\n";
                 i++;
@@ -120,4 +122,3 @@ public class ManejoDatos{
         return estadisticas;
     }
 }
-

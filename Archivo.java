@@ -6,7 +6,15 @@ import java.util.Scanner;
 import java.io.FileWriter;
 
 public class Archivo {
+    
     private File archivo;
+
+    public Archivo() {
+    }
+
+    public Archivo(File archivo) {
+        this.archivo = archivo;
+    }
 
     public Archivo (String nombreArchivo){
         archivo = new File(nombreArchivo);

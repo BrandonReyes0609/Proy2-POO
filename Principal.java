@@ -1,3 +1,4 @@
+import java.util.ArrayList;
 import java.util.Scanner;
 
 public class Principal {
@@ -5,20 +6,21 @@ public class Principal {
 
         ManejoDatos listadoPacientes = new ManejoDatos();
         Scanner teclado = new Scanner(System.in);
+        Archivo miArchivo = new Archivo();
         System.out.println("Bienvenido al programa");
-        String menu = "Seleccione alguna de las siguientes opciones: \n(1) Ingreso nuevo paciente \n(2) Ver datos paciente \n(3) Recomendaciones paciente \n(4) Estadistica \n (5) Guardar y Salir \n (6) Leer Archivo";
+        String menu = "\nSeleccione alguna de las siguientes opciones: \n(1) Ingreso nuevo paciente \n(2) Ver datos paciente \n(3) Recomendaciones paciente \n(4) Estadistica \n(5) Guardar y Salir \n(6) Leer Archivo";
         System.out.println(menu);
-        int op = teclado.nextInt(); 
+        int op = teclado.nextInt();
+        teclado.nextLine(); 
         while(op != 5){
             switch(op){
                 case 1:{
                     try{
-                    System.out.println("Selecciono Opcion 1 \n----Ingreso de nuevo paciente----");
+                    System.out.println("\nSelecciono Opcion 1 \n----Ingreso de nuevo paciente----");
                     System.out.println("Ingrese el nombre del paciente: ");
-                    teclado.next();
                     String nombre = teclado.nextLine();
                     System.out.println("Ingrese el apellido: ");
-                    String apellidos = teclado.nextLine(); ;
+                    String apellidos = teclado.nextLine();
                     System.out.println("Ingrese el edad: ");
                     int edad = teclado.nextInt();
                     teclado.nextLine();
@@ -41,7 +43,7 @@ public class Principal {
                     }
                     catch (Exception e){
                         teclado.next();
-                        System.out.println("Entrada incorrecta");
+                        System.out.println("\nEntrada incorrecta");
                         System.out.println(menu);
                         System.out.println("Ingrese la opción que desea: ");
                         op = teclado.nextInt();
@@ -50,16 +52,16 @@ public class Principal {
                     break;
                 }
                 case 2:{
-                    System.out.println("Selecciono Opcion 2\n----Ver datos paciente----");
+                    System.out.println("\nSelecciono Opcion 2\n----Ver datos paciente----");
                     System.out.println(listadoPacientes.pacientesFichaMedica());
                     break;
                 }
                 case 3:{
-                    System.out.println("Selecciono Opcion 3\n----Recomendaciones paciente----");
+                    System.out.println("\nSelecciono Opcion 3\n----Recomendaciones paciente----");
                     break;
                 }
                 case 4:{
-                    System.out.println("Selecciono Opcion 4\n----Ver estadisticas----");
+                    System.out.println("\nSelecciono Opcion 4\n----Ver estadisticas----");
                     System.out.println(listadoPacientes.estadistica());
                     break;
                 }case 5:{
@@ -75,7 +77,7 @@ public class Principal {
                     
                     break;
                 }case 6:{
-                    System.out.println("Leer datos pasiente");
+                    System.out.println("Leer datos paciente");
                     listadoPacientes.getPacientes();
                 }
 
