@@ -31,7 +31,7 @@ public class Principal {
                     String realizaEjercicio = teclado.nextLine();
                     System.out.println("Ingrese el numero de comidas al dia: ");
                     int numComida = teclado.nextInt();
-                    System.out.println("Ingrese el sexo o genero (hombre/mujer/otro): ");
+                    System.out.println("Ingrese el sexo o genero (hombre/mujer): ");
                     teclado.nextLine();
                     String sexo = teclado.nextLine();
                     System.out.println("Ingrese la estatura en Metros: ");
