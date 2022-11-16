@@ -37,6 +37,7 @@ public class Recomendaciones {
 
 
 
+
     @Override
     public String toString() {
         return "{" +
@@ -47,6 +48,7 @@ public class Recomendaciones {
 
 
     public String CalculadorString(){
+        IDatosPredefinidos cartero = new Mesaje();
         //--------------------------------------------
 
         String nombre = "";
@@ -91,17 +93,17 @@ public class Recomendaciones {
         double pesoKG = peso*1/2.20462; 
         String cadenaIMC = "";
         if(datoIMC<18.5){
-            cadenaIMC = cadenaIMC + "se encuentra dentro del rango de peso insuficiente";
+            cadenaIMC = cadenaIMC + cartero.mensaje1()+"\n";
         }else if(18.5>=datoIMC && datoIMC<24.9){
-            cadenaIMC = cadenaIMC + "se encuentra dentro del rango de peso normal o saludable.";
+            cadenaIMC = cadenaIMC + cartero.mensaje2()+"\n";//"se encuentra dentro del rango de peso normal o saludable.";
         }else if(25>=datoIMC && datoIMC<29.9){
-            cadenaIMC = cadenaIMC + " se encuentra dentro del rango de sobrepeso";
+            cadenaIMC = cadenaIMC + cartero.mensaje3()+"\n";//"se encuentra dentro del rango de sobrepeso";
         }else if(datoIMC>=30){
-            cadenaIMC = cadenaIMC + "se encuentra dentro del rango de obesidad";
+            cadenaIMC = cadenaIMC + cartero.mensaje4()+"\n";//"se encuentra dentro del rango de obesidad";
         }
 
 
-        //Cantidad y calorias necesarias
+        //Cantidad e calorias necesaria
         //https://aprendeconreyhan.org/como-realizar-mi-calculo-calorico/
         double _KcalDia = 0;
         String  _Res_KcalDia = "";
@@ -230,7 +232,7 @@ public class Recomendaciones {
     }
 
             /*
-         * Documentación de apoyo
+         * Docuemntación de apoyo
          * https://www.cdc.gov/healthyweight/spanish/assessing/bmi/adult_bmi/metric_bmi_calculator/bmi_calculator.html
          */
 
