@@ -7,7 +7,9 @@ public class Principal {
 
         ManejoDatos listadoPacientes = new ManejoDatos();
         Scanner teclado = new Scanner(System.in);
-        System.out.println("Bienvenido al programa");
+        System.out.println("-----------------  Bienvenidos a Control de Salud y Bienestar ---------------");
+        System.out.println("-----------------------    Menú de opciones ---------------------------------");
+        System.out.println("-----------------------------------------------------------------------------");
         String menu = "\n--------------------------------------------------------\n| Seleccione alguna de las siguientes opciones:        |\n| (1) Ingreso nuevo paciente                           |\n| (2) Ver datos paciente                               |\n| (3) Recomendaciones paciente                         |\n| (4) Estadistica                                      |\n| (5) Guardar y Salir                                  |\n| (6) Leer Archivo                                     |\n--------------------------------------------------------\nOpcion a elegir: ";
         System.out.println(menu);
         int op = teclado.nextInt();
@@ -38,7 +40,7 @@ public class Principal {
                         double estaturaCM = teclado.nextDouble();
                         double estaturaM = estaturaCM*0.01; 
                         double pesoKG = peso*1/2.20462; 
-                        
+                        System.out.println("Muchas gracias, los datos fueron ingresados con éxito");
     
                         teclado.nextLine();
                         
@@ -111,3 +113,4 @@ public class Principal {
 
 
 //esta es una prueba
+
