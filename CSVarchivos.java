@@ -1,6 +1,3 @@
-
-
-
 import com.csvreader.CsvReader;
 import com.csvreader.CsvWriter;
 import java.io.File;
@@ -88,18 +85,24 @@ public class EjemploCSV {
             // Mientras haya lineas obtenemos los datos del archivo
             while(leerUsuarios.readRecord()) {
                 String nombre = leerUsuarios.get(0);
-                String telefono = leerUsuarios.get(1);
-                String email = leerUsuarios.get(2);
+                String apellidos = leerUsuarios.get(1);
+                String edad = leerUsuarios.get(2);
+                String peso = leerUsuarios.get(3);
+                String realizaEjercicio = leerUsuarios.get(4);
+                String numComida= leerUsuarios.get(5);
+                String sexo= leerUsuarios.get(6);
+                String datoIMC= leerUsuarios.get(7);
+                String estatura= leerUsuarios.get(8);
+
                 
-                usuarios.add(new Usuario(nombre, telefono, email)); // Añade la informacion a la lista
+                usuarios.add(new Usuario(nombre,apellidos,edad,peso,realizaEjercicio,numComida,sexo,datoIMC,estatura)); // Añade la informacion a la lista
             }
             
             leerUsuarios.close(); // Cierra el archivo
             
             for(Usuario user : usuarios) {
-                System.out.println(user.getNombre() + " , "
-                    + user.getTelefono() + " , "
-                    +user.getEmail());
+                System.out.println(user.getNombre() + " , "+user.getApellidos()+" , "+user.getEdad() + " , "+user.getPeso() + " , "+user.getRealizaEjercicio() + " , "+user.getNumComida() + " , "+user.getSexo() + " , "+user.getDatoIMC() + " , "+user.getEstatura() + " , ");
+                    
             }
             
         } catch(FileNotFoundException e) {
