@@ -4,6 +4,16 @@ import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Scanner;
 import java.io.FileWriter;
+/*
+ * Audrey Samantha Bhor López - 22545
+    Brandon Javier Reyes Morales - 22992
+    Wilson Alejandro Calderón A. - 22018
+    Jose Angel Morales Farfan - 22689
+
+ */
+//import com.csvreader.CsvReader;
+//import com.csvreader.CsvWriter;
+import java.util.List;
 
 public class Archivo {
     private File archivo;
