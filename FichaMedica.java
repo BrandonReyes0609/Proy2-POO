@@ -9,7 +9,13 @@ public class FichaMedica{
     private String sexo;
     private double datoIMC;
     private double estatura;
+/*
+ * Audrey Samantha Bhor López - 22545
+    Brandon Javier Reyes Morales - 22992
+    Wilson Alejandro Calderón A. - 22018
+    Jose Angel Morales Farfan - 22689
 
+ */
     public FichaMedica() {
     }
 
