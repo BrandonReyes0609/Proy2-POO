@@ -1,17 +1,27 @@
 import java.lang.reflect.Array;
+import java.security.cert.X509CRL;
 import java.util.ArrayList;
 import java.util.Arrays;
+/*
+ * Audrey Samantha Bhor López - 22545
+    Brandon Javier Reyes Morales - 22992
+    Wilson Alejandro Calderón A. - 22018
+    Jose Angel Morales Farfan - 22689
 
+ */
 public class ManejoDatos{
     private ArrayList<FichaMedica> pacientes;
     private ArrayList<String> listadoDatos;
     private ArrayList<String> list1;
+    private ArrayList<String> list2;
+    private String cadenaEscrbribir = "";
 
     Archivo miArchivo = new Archivo("./stadoPaciente.csv");
 
     public ManejoDatos(){
         pacientes = new ArrayList<FichaMedica>();
         listadoDatos = new ArrayList<String>();
+        
         
     }
     
@@ -30,9 +40,9 @@ public class ManejoDatos{
         FichaMedica nuevFichaMedica = new FichaMedica(nombre, apellidos, edad, peso, realizaEjercicio, numComida, sexo, datoIMC, estatura);
         this.pacientes.add(nuevFichaMedica);
         //Integer.toString(edad)
-        String cadenaEscrbribir = nombre+","+Integer.toString(edad)+","+Double.toString(peso)+","+realizaEjercicio+","+Integer.toString(numComida)+","+sexo+","+Double.toString(datoIMC)+","+Double.toString(estatura)+"\n";
-
-        System.out.println(cadenaEscrbribir);
+        cadenaEscrbribir = cadenaEscrbribir + nombre+","+apellidos+","+Integer.toString(edad)+","+Double.toString(peso)+","+realizaEjercicio+","+Integer.toString(numComida)+","+sexo+","+Double.toString(datoIMC)+","+Double.toString(estatura)+"\n";
+        System.out.println("Se guardaron datos");
+        //System.out.println(cadenaEscrbribir);
         // aqui podemos mandar los datos para guardar
         //miArchivo.escribirArchivo("nombre,edad,color,genero,raza\nlaika,8,negro,hembra,labrador\nlisa,0,manto negro,hembra,pastor alemán\n");
         miArchivo.escribirArchivo(cadenaEscrbribir);
@@ -134,8 +144,8 @@ public class ManejoDatos{
             double promedioimch = sumaimc/ih;
             double promedioimcm = sumaimc/im;
             double promedioimco = sumaimc/io;
-            estadisticas = estadisticas + "\nIMC Promedio para 'Hombres': " + promedioimch + "\nIMC Promedio para 'Mujeres': " + promedioimcm + "\nIMC Promedio para 'Otro': " + promedioimco + "\n";
-            estadisticas = estadisticas + "\nTotal de fichas medicas registradas:\n'Hombres: "+ ih +"'Mujeres': "+ im + "'Otro': "+ io + "'Total': " + i;
+            estadisticas = estadisticas + "\nIMC Promedio para 'Hombres': " + promedioimch + "\nIMC Promedio para 'Mujeres': " + promedioimcm + "\n";
+            estadisticas = estadisticas + "\nTotal de fichas medicas registradas:\n'Hombres: "+ ih +"'Mujeres': "+ im + "'Total': " + i;
         }
         else {
             estadisticas = "No hay pacientes de los cuales sacar estadisticas.";
@@ -169,26 +179,93 @@ public class ManejoDatos{
         }
         else {
             resultados = "\nNo hay pacientes para mostrar.";
-        }  
+        }        
         return resultados;
 
     }
 
     
     public void LeerDatosNuevos(){
+        cadenaEscrbribir = "";
+
         //System.out.println(miArchivo.leerArchivoString());
         //<ArrayList> listado = miArchivo.leerArchivoString();
         String listadoA =  miArchivo.leerArchivoString();
         //listadoDatos = Arrays.asList(listadoA.split("\\s+"));
-        this.list1 = new ArrayList<String>(Arrays.asList(listadoA.split(",")));
+        this.list1 = new ArrayList<String>(Arrays.asList(listadoA.split("\n")));
         System.out.println(list1);
 
         int i = 0;
+        
         System.out.println(list1.size());
 
         while(i < list1.size()){
-            System.out.println(list1.get(i));
+
+            String nombre1 = "";
+            String apellidos1 = "";
+            int edad1 = 0;
+            double peso1 = 0.0;
+            String realizaEjercicio1 = "";
+            int numComida1 = 0;
+            String sexo1 = "";
+            double datoIMC1 = 0.0;
+            double estaturaCM1 = 0.0;
+
+            //System.out.println(list1.get(i));
+            //Recibir dator
             //System.out.println((i));
+            String datoRecibido = list1.get(i);
+            int x = 0;
+            this.list2 = new ArrayList<String>(Arrays.asList(datoRecibido.split(",")));
+            while(x < list2.size()){
+                String datoRecibido2 = list2.get(x);
+                System.out.println(datoRecibido2);
+
+                switch(x){
+                    case 0:{
+                        nombre1 = datoRecibido2;
+                        break;
+                    }
+                    case 1:{
+                        apellidos1 = datoRecibido2;
+                        break;
+                    }
+                    case 2:{
+                        edad1  =   Integer.valueOf(datoRecibido2); 
+                        break;
+                    }
+                    case 3:{
+                        peso1 = Double.valueOf(datoRecibido2);
+                        break;
+                    }
+                    case 4:{
+                        realizaEjercicio1 = datoRecibido2;
+                        break;
+                    }
+                    case 5:{
+                        numComida1 = Integer.parseInt(datoRecibido2);
+                        break;
+                    }
+                    case 6:{
+                        sexo1 = String.valueOf(datoRecibido2);
+                        break;
+                    }
+                    case 7:{
+                        datoIMC1 = Double.parseDouble(datoRecibido2);
+                        break;
+                    }
+                    case 8:{
+                        estaturaCM1 =  Double.parseDouble(datoRecibido2);
+                    }
+                    System.out.println("x: "+x);
+                }
+
+                x++;
+            }
+            agregarPacientes(nombre1, apellidos1, edad1, peso1, realizaEjercicio1, numComida1, sexo1, datoIMC1, estaturaCM1);
+
+            System.out.println("i: "+i);
+
             i++;
         }
 
@@ -205,5 +282,7 @@ public class ManejoDatos{
         return this.list1;
     }
 
-    
+    public ArrayList<String> getListadoPersona2() {
+        return this.list2;
+    }
 }
