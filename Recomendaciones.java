@@ -1,3 +1,10 @@
+/*
+ * Audrey Samantha Bhor López - 22545
+    Brandon Javier Reyes Morales - 22992
+    Wilson Alejandro Calderón A. - 22018
+    Jose Angel Morales Farfan - 22689
+
+ */
 import java.util.ArrayList;
 
 public class Recomendaciones {
