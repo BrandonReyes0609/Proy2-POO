@@ -1,3 +1,10 @@
+/*
+ * Audrey Samantha Bhor López - 22545
+    Brandon Javier Reyes Morales - 22992
+    Wilson Alejandro Calderón A. - 22018
+    Jose Angel Morales Farfan - 22689
+
+ */
 //actualizado el 07/11/2022
 import java.util.Scanner;
 import java.util.ArrayList;
@@ -11,10 +18,12 @@ public class Principal {
         Scanner teclado = new Scanner(System.in);
         System.out.println("Bienvenido al programa");
         //String menu = "Seleccione alguna de las siguientes opciones: \n(1) Ingreso nuevo paciente \n(2) Ver datos paciente \n(3) Recomendaciones paciente \n(4) Estadistica \n (5) Guardar y Salir \n (6) Leer Archivo";
-        String menu = "\n--------------------------------------------------------\n| Seleccione alguna de las siguientes opciones:        |\n| (1) Ingreso nuevo paciente                           |\n| (2) Ver datos paciente                               |\n| (3) Recomendaciones paciente                         |\n| (4) Estadistica                                      |\n| (5) Guardar y Salir                                  |\n| (6) Leer Archivo                                     |\n--------------------------------------------------------\nOpcion a elegir: ";
+        String menu = "\n--------------------------------------------------------\n| Seleccione alguna de las siguientes opciones:        |\n| (1) Ingreso nuevo paciente                           |\n| (2) Ver datos pacientes                              |\n| (3) Recomendaciones paciente                         |\n| (4) Estadistica                                      |\n| (5) Salir                                            |\n| (6) Leer Archivo                                     |\n--------------------------------------------------------\nOpcion a elegir: ";
         System.out.println(menu);
         int op = teclado.nextInt();
         teclado.nextLine();
+        listadoPacientes.LeerDatosNuevos();
+
         while(op != 5){
             switch(op){
                 case 1:{
@@ -28,7 +37,7 @@ public class Principal {
                         int edad = teclado.nextInt();
                         teclado.nextLine();
                         System.out.println("Ingrese el peso en Lb: ");
-                        double peso = teclado.nextDouble();
+                        double peso = Math.floor(teclado.nextDouble());
                         teclado.nextLine();
                         System.out.println("Ingrese si realiza ejercicio \n (1) Estilo de Vida Sedentario \n (2) Estilo de Vida Ligeramente activo \n (3) Estilo de Vida Activo o Moderadamente activo \n (4) Estilo de Vida Vigoroso: ");
                         String realizaEjercicio = teclado.nextLine();
@@ -38,7 +47,7 @@ public class Principal {
                         teclado.nextLine();
                         String sexo = teclado.nextLine();
                         System.out.println("Ingrese la estatura en 'cm': ");
-                        double estaturaCM = teclado.nextDouble();
+                        double estaturaCM = Math.floor(teclado.nextDouble());
                         double estaturaM = estaturaCM*0.01; 
                         double pesoKG = peso*1/2.20462; 
                         
@@ -98,7 +107,8 @@ public class Principal {
                     break;
                 }case 5:{
                     op = 5;
-                    System.out.println("Guardar y cerrar archivo");
+                    System.out.println("Cerrar archivo");
+                    System.exit(1);
 
                     break;
                 }case 6:{
